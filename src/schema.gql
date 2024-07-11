@@ -1,0 +1,55 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Company {
+  """Example field (placeholder)"""
+  CNPJ: String!
+
+  """Example field (placeholder)"""
+  companyImage: String!
+
+  """Example field (placeholder)"""
+  name: String!
+
+  """User Id"""
+  userId: String!
+}
+
+input CreateCompanyInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createCompany(createCompanyInput: CreateCompanyInput!): Company!
+  removeCompany(id: Int!): Company!
+  updateCompany(updateCompanyInput: UpdateCompanyInput!): Company!
+}
+
+type Query {
+  company(id: Int!): Company!
+  getUserById(id: String!): User
+  getUserList: [User!]!
+}
+
+input UpdateCompanyInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+"""users"""
+type User {
+  age: Int!
+  company: Company
+  createdDate: DateTime!
+  firstname: String!
+  id: ID!
+  lastname: String!
+}
